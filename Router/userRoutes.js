@@ -65,4 +65,42 @@ router.get('/setting',async(req,res)=>{
         res.status(500).json({message:'Internal Server Error'})
     }
 })
+//check Email
+router.post('/register/checkEmail',async(req,res)=>{
+    try {
+        const {email} = req.body
+        if (!email) {
+            return res.status(400).json({ message: 'Email is required' });
+        }
+        const check = await Model.findOne({email:email})
+        if(!check){
+            res.status(201).json({message:'User Not Found'})
+        }
+        else{
+            res.status(200).json({message:'User Found Successfully'})
+        }
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({message:'Internal Server Error'})
+    }
+})
+//check Username
+router.post('/register/checkUsername',async(req,res)=>{
+    try {
+        const {username} = req.body
+        if (!username) {
+            return res.status(400).json({ message: 'Username is required' });
+        }
+        const check = await Model.findOne({username:username})
+        if(!check){
+            res.status(201).json({message:'Username Not Found'})
+        }
+        else{
+            res.status(200).json({message:'Username Found Successfully'})
+        }
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({message:'Internal Server Error'})
+    }
+})
 module.exports = router;
