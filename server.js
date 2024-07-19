@@ -18,6 +18,10 @@ app.use('/',userRouter)
 const profileImgRouter = require('./Router/profileImgRoute')
 app.use('/api/',profileImgRouter)
 
+const feedbackRouter = require('./Router/feedbackRoute')
+app.use('/',feedbackRouter)
+
+
 app.get('/',(req,res)=>{
     res.send('Hello world')
 })
