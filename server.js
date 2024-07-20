@@ -21,6 +21,8 @@ app.use('/api/',profileImgRouter)
 const feedbackRouter = require('./Router/feedbackRoute')
 app.use('/',feedbackRouter)
 
+const profileInfoRouter = require('./Router/profileInfoRoute')
+app.use('/',profileInfoRouter)
 
 app.get('/',(req,res)=>{
     res.send('Hello world')
