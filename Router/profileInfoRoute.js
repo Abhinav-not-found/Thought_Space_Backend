@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Model = require('../Models/profileInfoModel')
 
-router.post('/settings/profileInfo',async(req,res)=>{
+router.put('/settings/profileInfo',async(req,res)=>{
     try {
         const data = req.body;
         const newData = new Model(data)
