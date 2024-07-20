@@ -15,6 +15,10 @@ const blogModel = mongoose.Schema({
     username:{
         type:String,
         required:false
+    },
+    createdAt:{
+        type:Date,
+        default:Date.now
     }
 })
 const blog = mongoose.model('blog',blogModel)
