@@ -4,6 +4,10 @@ const profileInfoSchema = mongoose.Schema({
         type:String,
         required:true,
     },
+    user:{
+        type:String,
+        required:false
+    },
     instagram:{
         type:String,
         required:false
